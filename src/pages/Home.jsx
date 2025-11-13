@@ -1,0 +1,1 @@
+import './Home.css';export default function Home(){return(<div className='hero'><h1>Cinefile React</h1></div>);}

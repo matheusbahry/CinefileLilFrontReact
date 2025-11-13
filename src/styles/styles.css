@@ -1,0 +1,131 @@
+/* ==== CARDS DO CATÁLOGO – VISUAL PREMIUM ==== */
+
+.item {
+  position: relative;
+  background: #161a1f;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0,0,0,.45);
+  transition: transform .20s ease, box-shadow .25s ease;
+}
+
+.item:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 24px rgba(0,0,0,.55);
+}
+
+/* Poster */
+.item__img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  background: #0d0f11;
+}
+
+/* Overlay com blur */
+.item__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.15) 60%, transparent);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  padding: 14px;
+  display: grid;
+  align-content: end;
+  transition: opacity .25s ease;
+}
+
+.item:hover .item__overlay {
+  opacity: 1;
+}
+
+/* Textos do overlay */
+.item__ovTitle {
+  font-size: 15px;
+  font-weight: 800;
+}
+.item__ovMeta {
+  font-size: 12px;
+  color: #b7c0ca;
+}
+.item__ovStars {
+  color: #f5c518;
+  margin-top: 2px;
+}
+
+/* Corpo (título abaixo da imagem) */
+.item__body {
+  padding: 10px;
+  display: grid;
+  gap: 4px;
+}
+.item__title {
+  font-size: 14px;
+  font-weight: 700;
+}
+.item__meta {
+  color: #9099a3;
+  font-size: 12px;
+}
+
+/* ==== CARROSSEL MAIS BONITO ==== */
+
+.row__scroller {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(190px,190px);
+  gap: 16px;
+  overflow-x: auto;
+  padding: 0 20px 6px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.row__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* Setas */
+.row__ctrlBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(20,24,28,.88);
+  backdrop-filter: blur(4px);
+  color: #f5c518;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  border: 0;
+  display: none;
+  transition: .2s;
+}
+
+.row:hover .row__ctrlBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row__ctrlBtn:hover {
+  background: #f5c518;
+  color: #111;
+}
+
+.row__ctrlBtn.is-left { left: 10px; }
+.row__ctrlBtn.is-right { right: 10px; }
+
+/* Título das categorias */
+.row__title {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.row__head {
+  padding: 0 20px;
+}
